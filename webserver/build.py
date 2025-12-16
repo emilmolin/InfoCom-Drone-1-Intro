@@ -30,13 +30,14 @@ def translate(coords_osm):
 
     return x_svg, y_svg
 
+# rör sig en 10 000 dels grad.
 def moveDrone(movement):
     global longitude
     global latitude
-    d_long = movement['longitude']
-    d_la = movement['latitude']
-    longitude += d_long/10000
-    latitude += d_la/10000
+    d_longitude = movement['longitude']
+    d_latitude = movement['latitude']
+    longitude += d_longitude/10000
+    latitude += d_latitude/10000
 
 @app.route('/drone', methods=['POST'])
 def drone():
